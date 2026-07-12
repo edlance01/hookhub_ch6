@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HookHub</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>HookHub</h1>
+    <p class="tagline">A gallery of Claude Code hooks, ready to install.</p>
+  </header>
+
+  <main>
+    <nav class="filter-bar" aria-label="Filter hooks by event type">
+      <button type="button" class="filter-pill is-active" data-filter="All">All</button>
+      {% for event_type in event_types %}
+      <button type="button" class="filter-pill" data-filter="{{ event_type }}">{{ event_type }}</button>
+      {% endfor %}
+    </nav>
+
+    <p class="empty-state hidden" role="status">No hooks match this filter.</p>
+
+    <section class="card-grid">
+      {% for hook in hooks %}
+      {% set accent = event_colors.get(hook.event_type.value, "#5b4fe0") %}
+      <article class="card" data-event-type="{{ hook.event_type.value }}" data-accent="{{ accent }}" style="border-top: 3px solid {{ accent }};">
+        <div class="card-header">
+          <h2 class="card-title">{{ hook.name }}</h2>
+          <span class="badge" style="background: {{ accent }}22; color: {{ accent }};">{{ hook.event_type.value }}</span>
+        </div>
+        <p class="card-description">{{ hook.description }}</p>
+        <dl class="card-meta">
+          {% if hook.author %}
+          <div><dt>Author</dt><dd>{{ hook.author }}</dd></div>
+          {% endif %}
+          {% if hook.language %}
+          <div><dt>Language</dt><dd>{{ hook.language }}</dd></div>
+          {% endif %}
+        </dl>
+        <a class="card-link" href="{{ hook.repo_url }}" target="_blank" rel="noopener" style="color: {{ accent }};">View on GitHub ↗</a>
+      </article>
+      {% endfor %}
+    </section>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

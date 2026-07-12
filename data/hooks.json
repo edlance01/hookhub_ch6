@@ -1,0 +1,74 @@
+[
+  {
+    "id": "bash-guard",
+    "name": "Bash Guard",
+    "description": "Blocks dangerous shell commands (rm -rf, force pushes, etc.) before they run.",
+    "event_type": "PreToolUse",
+    "repo_url": "https://github.com/hookhub-samples/bash-guard",
+    "author": "jchen",
+    "language": "Python"
+  },
+  {
+    "id": "auto-formatter",
+    "name": "Auto Formatter",
+    "description": "Runs Prettier or Black on any file Claude just edited or wrote.",
+    "event_type": "PostToolUse",
+    "repo_url": "https://github.com/hookhub-samples/auto-formatter",
+    "author": "mrivera",
+    "language": "TypeScript"
+  },
+  {
+    "id": "desktop-pinger",
+    "name": "Desktop Pinger",
+    "description": "Sends a native desktop notification whenever Claude needs your attention.",
+    "event_type": "Notification",
+    "repo_url": "https://github.com/hookhub-samples/desktop-pinger",
+    "author": "sgupta",
+    "language": "Bash"
+  },
+  {
+    "id": "prompt-logger",
+    "name": "Prompt Logger",
+    "description": "Appends every user prompt to a local JSONL audit log for later review.",
+    "event_type": "UserPromptSubmit",
+    "repo_url": "https://github.com/hookhub-samples/prompt-logger",
+    "author": "kowen",
+    "language": "Python"
+  },
+  {
+    "id": "test-runner-on-stop",
+    "name": "Test Runner on Stop",
+    "description": "Automatically runs the project's test suite whenever Claude finishes responding.",
+    "event_type": "Stop",
+    "repo_url": "https://github.com/hookhub-samples/test-runner-on-stop",
+    "author": "dpatel",
+    "language": "Python"
+  },
+  {
+    "id": "subagent-summary",
+    "name": "Subagent Summary",
+    "description": "Collects a short summary line every time a subagent finishes its task.",
+    "event_type": "SubagentStop",
+    "repo_url": "https://github.com/hookhub-samples/subagent-summary",
+    "author": "lnguyen",
+    "language": "TypeScript"
+  },
+  {
+    "id": "context-snapshot",
+    "name": "Context Snapshot",
+    "description": "Saves a snapshot of open files and git status right before context compaction.",
+    "event_type": "PreCompact",
+    "repo_url": "https://github.com/hookhub-samples/context-snapshot",
+    "author": "abaker",
+    "language": "Python"
+  },
+  {
+    "id": "session-greeter",
+    "name": "Session Greeter",
+    "description": "Prints a project-specific welcome banner with recent branch activity at session start.",
+    "event_type": "SessionStart",
+    "repo_url": "https://github.com/hookhub-samples/session-greeter",
+    "author": "twilson",
+    "language": "Bash"
+  }
+]
