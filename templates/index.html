@@ -27,7 +27,7 @@
       {% set accent = event_colors.get(hook.event_type.value, "#5b4fe0") %}
       <article class="card" data-event-type="{{ hook.event_type.value }}" data-accent="{{ accent }}" style="border-top: 3px solid {{ accent }};">
         <div class="card-header">
-          <h2 class="card-title">{{ hook.name }}</h2>
+          <h2 class="card-title" style="color: pink;">{{ hook.name }}</h2>
           <span class="badge" style="background: {{ accent }}22; color: {{ accent }};">{{ hook.event_type.value }}</span>
         </div>
         <p class="card-description">{{ hook.description }}</p>
